@@ -1,3 +1,4 @@
+import csv
 from pathlib import Path
 import random
 
@@ -17,5 +18,9 @@ def shuffle_adjective(name, adjectives):
 images = [image for image in read_images()]
 adjectives = read_adjectives()
 
-for (flower, image) in images:
-    print(shuffle_adjective(flower, adjectives))
+with open('flower_data.csv', 'w', newline = '') as csvfile:
+    writer = csv.writer(csvfile)
+    for (flower, image) in images:
+            print(shuffle_adjective(flower, adjectives))
+            shuffled_name = shuffle_adjective(flower, adjectives)
+            writer.writerow([shuffled_name, str(image)])
