@@ -1,7 +1,3 @@
-console.log("Hello, JS!");
-
-function sum(a, b) {
-    return a + b;
-  }
-
-console.log(sum(2, 2));
+fetch('http://localhost:9874//flowers')
+  .then(response => response.json())
+  .then(data => console.log(data))
