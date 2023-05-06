@@ -7,4 +7,16 @@ fetch('http://localhost:9874//flowers')
       p.innerText = `${flower.name}, ${flower.image_path}`;
       flowersDiv.appendChild(p);
     });
+
+    const homeButton = document.getElementById('homeButton');
+    const cardButton = document.getElementById('cardButton');
+
+    homeButton.addEventListener('click', function() {
+      flowersDiv.style.display = 'block';
+    });
+
+    cardButton.addEventListener('click', function() {
+      flowersDiv.style.display = 'none';
+      alert('Card view is not implemented yet!');
+    });
   });

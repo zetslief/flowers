@@ -1,3 +1,25 @@
-p {
-    background-color: #DAF7A6;
+#toolbar {
+    background-color: #fefae0
+}
+
+#homeButton, #cardButton {
+    background-color: #55a630;
+    border: none;
+    color: #0F1008;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    font-family: Consolas, monospace;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#homeButton:hover, #cardButton:hover {
+    background-color: #325B1C;
+    color: #000000;
 }
