@@ -1,4 +1,6 @@
+instance/
 flower_photos/
+__pycache__/
 flower_photos.tgz
 english-adjectives.txt
 flower_data.csv
