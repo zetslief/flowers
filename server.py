@@ -20,5 +20,6 @@ def get_flowers():
     return jsonify(flowers)
 
 if __name__ == '__main__':
-    port = app.config['PORT'] if 'PORT' in app.config else 5000
-    app.run(host='localhost', port=9874)
+    host = app.config['HOST'] if 'HOST' in app.config else 'localhost'
+    port = app.config['PORT'] if 'PORT' in app.config else 8080
+    app.run(host=host, port=port)
