@@ -1,4 +1,4 @@
-fetch('http://localhost:9874//flowers')
+fetch('http://localhost:8080//flowers')
   .then(response => response.json())
   .then(flowers => {
     const flowersDiv = document.getElementById('flowers');
