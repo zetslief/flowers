@@ -1,10 +1,10 @@
-CREATE TABLE flower (
+CREATE TABLE IF NOT EXISTS flower (
   	id SERIAL PRIMARY KEY,
 	name VARCHAR(100) NOT NULL,
 	image_url TEXT
 );
 
-CREATE TABLE "user" (
+CREATE TABLE IF NOT EXISTS "user" (
   	id SERIAL PRIMARY KEY,
   	first_name VARCHAR(100) NOT NULL,
   	last_name VARCHAR(100) NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE "user" (
 	address VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE "order" (
+CREATE TABLE IF NOT EXISTS "order" (
   	id SERIAL PRIMARY KEY,
   	user_id INTEGER REFERENCES "user"(id),
   	flower_id INTEGER REFERENCES flower(id),

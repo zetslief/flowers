@@ -14,6 +14,8 @@ cur = conn.cursor()
 with open("db.sql", "r") as f:
     cur.execute(f.read())
 
+cur.execute("DELETE FROM flower")
+
 with open('flower_data.csv', newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=',', quotechar='"')
     next(reader) 
@@ -22,6 +24,6 @@ with open('flower_data.csv', newline='') as csvfile:
             name, image_url = row
             cur.execute("INSERT INTO flower (name, image_url) VALUES (%s, %s)", (name, image_url))
         conn.commit()
-        
+
 cur.close()
 conn.close()
