@@ -22,6 +22,7 @@ def get_flowers():
 @app.post('/card/buy')
 def buy_card():
     json = request.get_json()
+    print(json)
     return json
 
 if __name__ == '__main__':
