@@ -29,6 +29,9 @@ form.card-form {
     margin: 10 10 10 10;
     padding: 10px;
     background-color: #fefae0;
+    border: solid;
+    border-color: grey;
+    border-radius:  2px;
 }
 
 div.card-form {
