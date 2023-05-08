@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import csv
 
 app = Flask(__name__, instance_relative_config=True)
@@ -18,6 +18,12 @@ def get_flowers():
         for row in reader:
             flowers.append({'name': row[0], 'image_path': row[1]})
     return jsonify(flowers)
+
+@app.post('/card/buy')
+def buy_card():
+    json = request.get_json()
+    print(json)
+    return json
 
 if __name__ == '__main__':
     host = app.config['HOST'] if 'HOST' in app.config else 'localhost'

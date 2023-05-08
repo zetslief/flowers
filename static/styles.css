@@ -23,3 +23,26 @@
     background-color: #325B1C;
     color: #000000;
 }
+
+form.card-form {
+    display: table;
+    margin: 10 10 10 10;
+    padding: 10px;
+    background-color: #fefae0;
+    border: solid;
+    border-color: grey;
+    border-radius:  2px;
+}
+
+div.card-form {
+    display: table-row;
+}
+
+.card-form > label, input {
+    display: table-cell;
+    margin-bottom: 10px;
+}
+
+.card-form > label {
+    padding-right: 10px;
+}
