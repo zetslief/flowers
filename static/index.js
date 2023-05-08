@@ -36,15 +36,9 @@ function mainView() {
 
 
 function cardView() {
-  console.log("Card view initialization");
   const form = document.getElementById('cardForm');
-  const firstName = document.getElementById('firstName'); 
-  const lastName = document.getElementById('lastName'); 
-  const email = document.getElementById('email'); 
-  const phone = document.getElementById('phone'); 
-  const address = document.getElementById('address'); 
-  const buyCard = document.getElementById('buyCard'); 
-  form.onsubmit = function(_) {
+  form.onsubmit = async function(e) {
+    e.preventDefault();
     const data = {
       firstName: form.elements.firstName.value,
       lastName: form.elements.lastName.value,
@@ -52,7 +46,16 @@ function cardView() {
       phone: form.elements.phone.value,
       address: form.elements.address.value,
     };
-    console.log(JSON.stringify(data));
+    const result = await fetch(CARD_BUY_URL, {
+      method: 'post',
+      mode: "cors",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    const json = await result.json();
+    console.log(json);
     return false;
   };
 }
